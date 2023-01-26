@@ -81,8 +81,8 @@ export default function Login() {
   return (
     <>
   
-    <div className="Signup">
-      <div className="card">
+    <div className="Signup1">
+      <div className="card1">
         <div className="image">
           <p>BigWave!</p>
         </div>

@@ -21,6 +21,7 @@ export default function MailVerify() {
   const dispatch = useDispatch();
   const navigate  = useNavigate();
   const [open, setOpen] = React.useState(false);
+  const [openSuccess, setOpenSuccess] = React.useState(false);
   const [data, setData] = useState({
     id: Authdata.json.id,
     verification_code: "",
@@ -42,6 +43,14 @@ export default function MailVerify() {
     console.log("handleClickSend");
   };
 
+  const handleClickChangeMail = (e) => {
+    e.preventDefault();
+    navigate('/changeMail')
+
+    dispatch(sendOTP(data));
+   console.log("handleClickSend");
+ };
+
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -49,9 +58,10 @@ export default function MailVerify() {
     }
 
     setOpen(false);
+    setOpenSuccess(false);
   };
   useEffect(()=>{
-    if(authData&&authData.message==='Invalid verification code!'){
+      if(authData&&authData.message==='Invalid verification code!'){
       setOpen(true);
       console.log("invalid");
     }
@@ -61,6 +71,15 @@ export default function MailVerify() {
       
     }
   },[authData])
+
+  useEffect(()=>{
+    if(Authdata&&Authdata.status==='success'){
+     setOpenSuccess(true);
+   }
+   
+     
+   
+ },[])
 
   return (
     <>
@@ -85,20 +104,16 @@ export default function MailVerify() {
         </form>
         <Button variant="contained" style={{ marginTop:"15px" }} onClick={handleClick} >Confirm</Button>
         <hr />
-        <div className="dont">
-          <span style={{ fontSize: "12px", cursor: "pointer" }}>
-            <Link
-              style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}
-              to="/changeMail"
-            >
-              <Button variant="contained" style={{ marginTop:"15px" }} >Change Email</Button>
-            </Link>
-          </span>
-        </div>
+        <Button variant="contained" style={{ marginTop:"15px" }}onClick={handleClickChangeMail} >Change Email</Button>
+           
+          
+        
       
        
         
-          <Button variant="contained" style={{ marginTop:"15px" }} onClick={handleClickSend} >Send Code Again</Button>
+           <Button variant="contained" style={{ marginTop:"15px" }} onClick={handleClickSend} >Send Code Again</Button>
+ 
+           <h6 style={{color:"black",margin:"20px",textAlign: "center"}}  onClick={()=>{navigate("/")}}>Logout</h6>
        
       </div>
     </div>
@@ -108,6 +123,11 @@ export default function MailVerify() {
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
         Invalid OTP!
+        </Alert>
+      </Snackbar>
+      <Snackbar open={openSuccess} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+         OTP Send!
         </Alert>
       </Snackbar>
     </Stack></>
