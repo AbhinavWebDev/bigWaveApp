@@ -1,0 +1,77 @@
+{
+  "name": "starter",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:3000",
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@giphy/js-fetch-api": "^4.4.0",
+    "@iconscout/react-unicons": "^1.1.6",
+    "@mantine/core": "^4.2.1",
+    "@mantine/form": "^5.5.0",
+    "@mantine/hooks": "^4.2.1",
+    "@material-ui/core": "^4.12.4",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.10",
+    "@mui/styled-engine-sc": "^5.10.6",
+    "@mui/x-data-grid": "^5.17.10",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "axios": "^0.27.2",
+    "caniuse-lite": "^1.0.30001431",
+    "formik": "^2.2.9",
+    "formik-material-ui": "^4.0.0-alpha.2",
+    "framer-motion": "^7.6.1",
+    "mdbootstrap": "^4.20.0",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.5.0",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.36.1",
+    "react-icons": "^4.6.0",
+    "react-input-emoji": "^4.2.0",
+    "react-insta-stories": "^2.4.2",
+    "react-otp-input": "^2.4.0",
+    "react-redux": "^8.0.4",
+    "react-router-dom": "^6.4.2",
+    "react-scripts": "5.0.0",
+    "react-swipeable-views": "^0.14.0",
+    "react-switch": "^7.0.0",
+    "react-timeago": "^7.1.0",
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.1",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
+    "socket.io-client": "^4.5.3",
+    "styled-components": "^5.3.6",
+    "timeago": "^1.6.7",
+    "timeago.js": "^4.0.2",
+    "web-vitals": "^2.1.0",
+    "yup": "^0.32.11"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
